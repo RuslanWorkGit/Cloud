@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="format">
+    <form  method="post" th:action="@{/}" th:object="${note}">
+        <input class="title" id="title" name="title" required type="text" th:field="*{title}" placeholder="Enter the name of the note"><br>
+        <input class="description" id="description" name="description" required type="text" th:field="*{description}" placeholder="Enter the description of the note"><br>
+        <button class="form-submit-button" type="submit">Add note</button>
+        <button onclick="document.location='/note'" type="button" class="form-submit-button" >View notes</button>
+    </form>
+</div>
+
+</body>
+</html>

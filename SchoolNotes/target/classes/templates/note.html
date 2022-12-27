@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="button-div">
+    <a th:href="@{/}"><button type="button" class="form-submit-button" ><b>Add note</b></button></a>
+</div>
+<div class="format" th:each="data:${notes}">
+    <h2 th:text="${data.title}"></h2>
+    <span th:text="${data.description}"></span>
+    <p></p>
+    <a th:href="@{/note/delete(title=${data.title})}"><button type="button" class="form-delete-button" ><b>Delete note</b></button></a>
+</div>
+
+</body>
+</html>
